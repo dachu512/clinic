@@ -1,7 +1,8 @@
-package com.springapp.clinic.patient;
+package com.springapp.clinic.model;
 
 import jakarta.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "patients")
@@ -31,6 +32,10 @@ public class Patient {
 
     @Column(name = "address")
     private String address;
+
+    @OneToMany
+    @JoinColumn(name = "patientId")
+    private List<Appointment> appointment;
 
     public String getFirstName() {
         return firstName;
@@ -94,5 +99,13 @@ public class Patient {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public List<Appointment> getAppointment() {
+        return appointment;
+    }
+
+    public void setAppointment(List<Appointment> appointment) {
+        this.appointment = appointment;
     }
 }

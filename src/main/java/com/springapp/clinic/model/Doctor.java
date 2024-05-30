@@ -1,8 +1,7 @@
-package com.springapp.clinic.doctor;
+package com.springapp.clinic.model;
 
 
 import jakarta.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "doctors")

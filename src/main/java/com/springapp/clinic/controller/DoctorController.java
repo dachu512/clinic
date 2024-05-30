@@ -1,5 +1,7 @@
-package com.springapp.clinic.doctor;
+package com.springapp.clinic.controller;
 
+import com.springapp.clinic.repository.DoctorRepository;
+import com.springapp.clinic.model.Doctor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
