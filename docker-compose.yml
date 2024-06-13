@@ -1,18 +1,18 @@
 version: '3.9'
 
 services:
-  clinic_app:
-    container_name: clinic_app
-    image: clinic/clinic_app:1.0.0
-    build: .
-    ports:
-      - 8080:8080
-    environment:
-      - DATABASE_URL=jdbc:postgresql://clinic_db:5432/postgres
-      - DATABASE_USERNAME=postgres
-      - DATABASE_PASSWORD=postgres
-    depends_on:
-      - clinic_db
+#  clinic_app:
+#    container_name: clinic_app
+#    image: clinic/clinic_app:1.0.0
+#    build: .
+#    ports:
+#      - 8080:8080
+#    environment:
+#      - DATABASE_URL=jdbc:postgresql://clinic_db:5432/postgres
+#      - DATABASE_USERNAME=postgres
+#      - DATABASE_PASSWORD=postgres
+#    depends_on:
+#      - clinic_db
 
   clinic_db:
     container_name: clinic_db
@@ -22,9 +22,9 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres
+      POSTGRES_DB: clinic_database
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - D:\Projekty\Spring\clinic\postgresql_data:/var/lib/postgresql/data
 
 volumes:
   pgdata: {}
